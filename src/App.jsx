@@ -1,7 +1,10 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
-import { Button } from "./components/Button/Button.styled";
+import { Button, DangerButton } from "./components/Button/Button.styled";
+import { Button2 } from "./components/Button/Button.styled2";
+import { GlobalStyle } from "./components/Global.styled";
+
 import "./App.css";
 
 function App() {
@@ -10,6 +13,8 @@ function App() {
   return (
     <>
       <div>
+        <GlobalStyle />
+        <h1>Заголовок приложения</h1>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -30,7 +35,17 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <div>
-        <Button>Нажми на меня</Button>
+        <Button $highlighted>Выделенная кнопка</Button>
+        <Button>Обычная кнопка</Button>
+      </div>
+      <div>
+        <Button2 $size="small">Маленькая кнопка</Button2>
+        <Button2 $size="medium">Средняя кнопка</Button2>
+        <Button2 $size="large">Большая кнопка</Button2>
+      </div>
+      <div>
+        <Button>Обычная кнопка</Button>
+        <DangerButton>Опасная кнопка</DangerButton>
       </div>
     </>
   );
